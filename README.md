@@ -18,7 +18,7 @@ Check out the final build over [here](https://now-event-project-collab.web.app/)
   
 - After switching to a new branch, you are expected to read the `README.md` file first and then continuing with the source files.
 
-- Wish to download the source files on your local pc and then try it? Check out the instructions for the same [here]()
+- Wish to download the source files on your local pc and then try it? Check out the instructions for the same [here](#instructions)
   
 - Found an error, or not getting how to solve the error? Create an issue [here](https://github.com/nowmozillaclub/ReactBase/issues/new/choose)
 
@@ -27,13 +27,15 @@ Check out the final build over [here](https://now-event-project-collab.web.app/)
 ---
 - Click the green code button.
   ![Green Button](https://github.com/nowmozillaclub/ReactBase/blob/main/image2.png)
+  
 - Copy the URL
   ![URL](https://github.com/nowmozillaclub/ReactBase/blob/main/image.png)
- - Make a new directory on your file and open CMD over there
- - Write `git clone urlYouCopied`
- - Go into the directory you just **cloned** like `cd fileName`
- - To switch to a particular day's branch do: `git checkout branchName`
-    - To get the name of the branch, check the github!
+  
+- Make a new directory on your file and open CMD over there
+- Write `git clone urlYouCopied`
+- Go into the directory you just **cloned** like `cd fileName`
+- To switch to a particular day's branch do: `git checkout branchName`
+  - To get the name of the branch, check the github!
 
 
 ## Running the code on your Local Device
