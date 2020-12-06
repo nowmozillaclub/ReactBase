@@ -1,3 +1,125 @@
+# ReactBase
+
+All course files for the event ReactBase - a React Firebase App on Project Collabration Platform.
+
+---
+
+## What is React?
+
+React is a JavaScript library developed by Facebook which is used for building fast and interactive user interfaces for both web and mobile applications.
+
+A typical React app has multiple components, which combined together makes a complex React App. Components are like LEGO pieces which when combined together in the right order, a bigger object can be built and each of this component can be modified easily. This feature of react makes it very modular and easy to debug.
+
+## How React manipulates the DOM
+
+DOM actually defines how elements are accessed and manipulated in a web page.
+
+Whenever a change is made in the application, all objects in the real DOM are updated, this makes it extremely slow. Now React deals with this problem in a really unique way.
+
+React makes a Virtual DOM which is a copy of the Real DOM. Now React compares this Virtual DOM and the Real DOM, whenever a change is made in the Web App, the corresponding changes are done to the Virtual DOM and only the parts that are changed are updated in the Real DOM rather than reloading the entire DOM again. This makes a huge difference when it comes to speed and user interactivity in a Web App.
+
+---
+
+## React Components
+
+A component is an **independent, reusable,** block of code, which divides the UI into smaller pieces.
+
+A react app has two types of components:
+
+1. Class based
+2. Functional
+
+## Class based Component
+
+A class based component is the basic type of component in react. It contains a state and a render method. The render method contains the JSX which is being converted to HTML and is being output on the screen.
+
+Example:
+
+```jsx
+class Employee extends React.Component {
+	// This 
+  state = {
+    counter: 0,
+    name: "Yash",
+    people: { fname: "Naman", lname: "Garg" },
+    person: ["Yash", "123", "Varun"]
+  };
+  clicked = () => {
+    const { people } = this.state;
+    this.setState(
+      {
+        counter: this.state.counter + 1
+        // name: "Harsh",
+        // people: { ...people, fname: "Varun" },
+        // person: [...this.state.person, "Aayush"]
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+
+    // alert((this.counter = this.counter + 1));
+    // alert("You clicked me");
+  };
+
+  componentDidMount() {
+    console.log("Component Mounted!");
+  }
+
+  _UNSAFEcomponentWillMount() {
+    console.log("Components will mount");
+  }
+  render() {
+    return (
+      <div>
+        <h1> Hello </h1>
+        <button onClick={this.clicked}> Click Me!</button>
+      </div>
+    );
+  }
+}
+```
+
+## Functional Components
+
+Functional components as the name suggests are created using functions and they are also called as UI components.
+
+A few key ponts: 
+
+- They are more concerned wiReacth how the data is presented to the user.
+- Functional components are stateless components i.e the do not have any state.
+- State can be added to these components using a React Hook called useState.
+- componentDidMount can be replaced by the React Hook called useEffect in functional components.
+- They do not have any render method.
+
+Syntax:
+
+1. Using **function** keyword
+
+```jsx
+function Component1() {
+    return(
+        <div>
+            <p>hello</p>
+        </div>
+    );
+}
+```
+
+2. Using **arrow** function
+
+```jsx
+const Component2 = () => {
+    return(
+        <div>
+            <p>lol</p>
+        </div>
+    )
+}
+```
+
+---
+
 ## Props
 
 As React is a component based library which divides the UI into several components we might need to pass on some data from one component to another. This can be achieved by using **Props.**
@@ -59,46 +181,6 @@ class User extends Component {
 }
 
 export default Outter;
-```
-
----
-
-## Functional Components
-
-Functional components as the name suggests are created using functions and they are also called as UI components.
-
-A few key ponts: 
-
-- They are more concerned with how the data is presented to the user.
-- Functional components are stateless components i.e the do not have any state.
-- State can be added to these components using a React Hook called useState.
-- componentDidMount can be replaced by the React Hook called useEffect in functional components.
-- They do not have any render method.
-
-Syntax:
-
-1. Using **function** keyword
-
-```jsx
-function Component1() {
-    return(
-        <div>
-            <p>hello</p>
-        </div>
-    );
-}
-```
-
-2. Using **arrow** function
-
-```jsx
-const Component2 = () => {
-    return(
-        <div>
-            <p>lol</p>
-        </div>
-    )
-}
 ```
 
 ---
