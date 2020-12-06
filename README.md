@@ -29,7 +29,7 @@ Check out the final build over [here](https://now-event-project-collab.web.app/)
   ![Green Button](https://github.com/nowmozillaclub/ReactBase/blob/main/image2.png)
   
 - Copy the URL
-  ![URL](https://github.com/nowmozillaclub/ReactBase/blob/main/image.png)
+  - ![URL](https://github.com/nowmozillaclub/ReactBase/blob/main/image.png)
   
 - Make a new directory on your file and open CMD over there
 - Write `git clone urlYouCopied`
