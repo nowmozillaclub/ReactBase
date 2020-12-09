@@ -3,6 +3,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import DragDrop from './components/dashboard/DragDrop';
+import HomePage from './components/dashboard/HomePage';
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={SignIn} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/workspace" component={DragDrop} />
+          <Route exact path="/workspace" component={HomePage} />
+          <Route path="/workspace/:id" component={DragDrop} />
         </Switch>
       </div>
     </BrowserRouter>

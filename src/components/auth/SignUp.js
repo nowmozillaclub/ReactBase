@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth, db } from '../../fbConfig';
 
-function SignUp() {
+function SignUp(props) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -11,10 +11,16 @@ function SignUp() {
     const handleSubmit = (e) => {
         e.preventDefault();
         auth.createUserWithEmailAndPassword(email, pass).then((data) => {
-            db.collection('users').doc().set({
-                'Name': name,
-                'Email': email,
-                'UID': data.user.uid
+            data.user.updateProfile({
+                displayName: name
+            }).then(() => {
+                db.collection('users').doc().set({
+                    'Name': name,
+                    'Email': email,
+                    'UID': data.user.uid
+                })
+            }).then(() => {
+                props.history.push('')
             })
         })
     }
@@ -40,8 +46,8 @@ function SignUp() {
                             <input id="password" onChange={(e) => setPass(e.target.value)} type="password" className="validate" />
                             <label htmlFor="password">Password</label>
                         </div>
-                        <input id="submit" type="submit" className="btn center-align col s3 offset-s3" style={{borderRadius:"24px"}}/>
-                        <Link to="/" style={{paddingLeft:"20px"}}>Already have an account?</Link>
+                        <input id="submit" type="submit" className="btn center-align col s3 offset-s3" style={{ borderRadius: "24px" }} />
+                        <Link to="/" style={{ paddingLeft: "20px" }}>Already have an account?</Link>
                     </div>
                 </form>
             </div>
